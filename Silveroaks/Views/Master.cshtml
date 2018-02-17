@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>Silveroaks</title>
+
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="~/vendor/font-awesome/js/fontawesome-all.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="~/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="~/css/creative.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Silveroaks</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                @{
+                    var navItems = Model.Content
+                        .AncestorOrSelf<Home>()
+                        .Children
+                        .Where(x => x.GetPropertyValue<bool>("pageVisible"));
+                }
+                <ul class="navbar-nav ml-auto">
+                    @foreach (var item in navItems)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="@item.Url">@item.Name</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
+
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="~/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="~/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/scripts/creative.min.js"></script>
+</body>
+</html>
