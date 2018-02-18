@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, INavigation
+	public partial class Home : PublishedContentModel, INavigation, IPageHeaderText
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -190,12 +190,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Featured Rooms
+		/// Home Page Featured Rooms: Pick featured rooms for the homepage here
 		///</summary>
-		[ImplementPropertyType("featuredRooms")]
-		public DateTime FeaturedRooms
+		[ImplementPropertyType("homePageFeaturedRooms")]
+		public IEnumerable<IPublishedContent> HomePageFeaturedRooms
 		{
-			get { return this.GetPropertyValue<DateTime>("featuredRooms"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("homePageFeaturedRooms"); }
 		}
 
 		///<summary>
@@ -205,24 +205,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public string MainAmenitiesHeader
 		{
 			get { return this.GetPropertyValue<string>("mainAmenitiesHeader"); }
-		}
-
-		///<summary>
-		/// Motel Name: The motel's name
-		///</summary>
-		[ImplementPropertyType("motelName")]
-		public string MotelName
-		{
-			get { return this.GetPropertyValue<string>("motelName"); }
-		}
-
-		///<summary>
-		/// Short Description: Say something about the motel
-		///</summary>
-		[ImplementPropertyType("shortDescription")]
-		public string ShortDescription
-		{
-			get { return this.GetPropertyValue<string>("shortDescription"); }
 		}
 
 		///<summary>
@@ -259,6 +241,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool PageVisible
 		{
 			get { return Umbraco.Web.PublishedContentModels.Navigation.GetPageVisible(this); }
+		}
+
+		///<summary>
+		/// Header Text: Your page header
+		///</summary>
+		[ImplementPropertyType("headerText")]
+		public string HeaderText
+		{
+			get { return Umbraco.Web.PublishedContentModels.PageHeaderText.GetHeaderText(this); }
+		}
+
+		///<summary>
+		/// Short Description: Short description of the element goes here
+		///</summary>
+		[ImplementPropertyType("shortDescription")]
+		public string ShortDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.PageHeaderText.GetShortDescription(this); }
 		}
 	}
 }

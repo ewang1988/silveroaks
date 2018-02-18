@@ -52,12 +52,11 @@
 
     <h3 class="my-4">Other Rooms</h3>
     <section class="row">
-        @foreach (var item in room.Ancestor<Accommodation>().Children)
+        @foreach (RoomType item in room.Ancestor<Accommodation>().Children)
         {
-            var otherRoom = item as RoomType;
             <div class="col-md-4 col-sm-6 mb-4">
-                <a href="@otherRoom.Url">
-                    <img class="img-fluid" src="@otherRoom.ThumbnailPic.Url" alt="@otherRoom.Name">
+                <a href="@item.Url">
+                    <img class="img-fluid" src="@item.ThumbnailPic.Url" alt="@item.Name">
                 </a>
             </div>
         }

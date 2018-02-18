@@ -26,6 +26,9 @@ namespace Umbraco.Web.PublishedContentModels
 	{
 		/// <summary>Header Text</summary>
 		string HeaderText { get; }
+
+		/// <summary>Short Description</summary>
+		string ShortDescription { get; }
 	}
 
 	/// <summary>Page Header Text</summary>
@@ -64,5 +67,17 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Header Text</summary>
 		public static string GetHeaderText(IPageHeaderText that) { return that.GetPropertyValue<string>("headerText"); }
+
+		///<summary>
+		/// Short Description: Short description of the element goes here
+		///</summary>
+		[ImplementPropertyType("shortDescription")]
+		public string ShortDescription
+		{
+			get { return GetShortDescription(this); }
+		}
+
+		/// <summary>Static getter for Short Description</summary>
+		public static string GetShortDescription(IPageHeaderText that) { return that.GetPropertyValue<string>("shortDescription"); }
 	}
 }

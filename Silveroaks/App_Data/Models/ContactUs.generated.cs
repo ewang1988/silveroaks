@@ -89,5 +89,14 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.PageHeaderText.GetHeaderText(this); }
 		}
+
+		///<summary>
+		/// Short Description: Short description of the element goes here
+		///</summary>
+		[ImplementPropertyType("shortDescription")]
+		public string ShortDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.PageHeaderText.GetShortDescription(this); }
+		}
 	}
 }

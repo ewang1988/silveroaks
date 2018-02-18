@@ -46,7 +46,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Room Pictures: add images here
+		/// Room Pictures: Pick gallery pictures here
 		///</summary>
 		[ImplementPropertyType("roomPictures")]
 		public IEnumerable<IPublishedContent> RoomPictures
@@ -106,6 +106,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public string HeaderText
 		{
 			get { return Umbraco.Web.PublishedContentModels.PageHeaderText.GetHeaderText(this); }
+		}
+
+		///<summary>
+		/// Short Description: Short description of the element goes here
+		///</summary>
+		[ImplementPropertyType("shortDescription")]
+		public string ShortDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.PageHeaderText.GetShortDescription(this); }
 		}
 	}
 }
