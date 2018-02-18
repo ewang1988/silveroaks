@@ -3,19 +3,18 @@
     Layout = "Master.cshtml";
 }
 
-<section class="container">
+<main class="container">
     <h1 class="mt-4 mb-3">
         Our Rooms
     </h1>
-    @{
-        Html.RenderPartial("BreadCrumbs", Model);
-        var rooms = Model.Content.Children();
-    }
-
-
     <div class="row">
+        @{
+            Html.RenderPartial("BreadCrumbs", Model);
+            var rooms = Model.Content.Children;
+        }
         @foreach (var room in rooms)
         {
+            var features = room.Children();
             var thumbnailNode = room.GetPropertyValue<int>("thumbnailPic");
             <div class="col-lg-4 col-sm-6 portfolio-item">
                 <div class="card h-100">
@@ -24,7 +23,12 @@
                         <h4 class="card-title">
                             <a href="@room.Url">@room.Name</a>
                         </h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+                        <ul>
+                            @foreach (var feature in features)
+                            {
+                                <li>@feature.Name</li>
+                            }
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -54,4 +58,4 @@
             </a>
         </li>
     </ul>
-</section>
+</main>
