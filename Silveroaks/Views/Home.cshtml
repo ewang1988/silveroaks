@@ -34,21 +34,25 @@
     </div>
 </section>
 <section id="our-rooms" class="bg-primary">
-    <div class="row">
-        @foreach (var room in home.HomePageFeaturedRooms)
-        {
-            <div class="col-lg-4 mb-4">
-                <div class="card h-100">
-                    <h4 class="card-header">Room 1</h4>
-                    <div class="card-body">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+    <div class="container">
+        <div class="row">
+            @foreach (RoomType room in home.HomePageFeaturedRooms)
+            {
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <h4 class="card-header">@room.Name</h4>
+                        <div>
+                            <a href="@room.Url">
+                                <img src="@room.ThumbnailPic.Url" class="img-fluid" alt="@room.HeaderText" />
+                            </a>
+                        </div>
+                        <div class="card-footer">
+                            <a href="@room.Url" class="btn btn-primary">Learn More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
 </section>
 <section id="services">

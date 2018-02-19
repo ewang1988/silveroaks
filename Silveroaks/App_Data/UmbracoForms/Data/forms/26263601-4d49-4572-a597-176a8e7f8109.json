@@ -1,0 +1,78 @@
+{
+  "name": "Contact Form",
+  "created": "2018-02-20T11:11:07.0637112+13:00",
+  "pages": [
+    {
+      "fieldSets": [
+        {
+          "caption": null,
+          "sortOrder": 0,
+          "id": "5e16a5c5-6099-4f35-ab62-8978b1cca1ca",
+          "page": "00000000-0000-0000-0000-000000000000",
+          "containers": [
+            {
+              "caption": null,
+              "width": 12,
+              "fields": [
+                {
+                  "caption": "Got any questions or concerns",
+                  "tooltip": "How can we help you?",
+                  "placeholder": null,
+                  "cssClass": null,
+                  "alias": "gotAnyQuestionsOrConcerns",
+                  "id": "5e9192ce-a882-44e7-f9b4-b007f76b414c",
+                  "fieldTypeId": "023f09ac-1445-4bcb-b8fa-ab49f33bd046",
+                  "prevalueSourceId": "00000000-0000-0000-0000-000000000000",
+                  "dataSourceFieldKey": null,
+                  "mandatory": true,
+                  "regex": null,
+                  "requiredErrorMessage": null,
+                  "invalidErrorMessage": null,
+                  "condition": {
+                    "id": "00000000-0000-0000-0000-000000000000",
+                    "enabled": true,
+                    "actionType": "Show",
+                    "logicType": "Any",
+                    "rules": []
+                  },
+                  "settings": {
+                    "Placeholder": "your question goes here",
+                    "DefaultValue": ""
+                  },
+                  "preValues": []
+                }
+              ]
+            }
+          ],
+          "condition": null
+        }
+      ],
+      "caption": "Contact Form",
+      "sortOrder": 0,
+      "id": "00000000-0000-0000-0000-000000000000",
+      "form": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "id": "26263601-4d49-4572-a597-176a8e7f8109",
+  "fieldIndicationType": "MarkMandatoryFields",
+  "indicator": "*",
+  "showValidationSummary": false,
+  "hideFieldValidation": false,
+  "requiredErrorMessage": "Please provide a value for {0}",
+  "invalidErrorMessage": "Please provide a valid value for {0}",
+  "messageOnSubmit": "Thank you! We will get back to you as soon as we can",
+  "goToPageOnSubmit": 0,
+  "xPathOnSubmit": null,
+  "manualApproval": false,
+  "storeRecordsLocally": true,
+  "cssClass": null,
+  "disableDefaultStylesheet": false,
+  "useClientDependency": false,
+  "workflows": [
+    "01c62c6c-dbce-46c2-ac8a-7d617580edcc"
+  ],
+  "datasource": null,
+  "submitLabel": "Send",
+  "nextLabel": "Next",
+  "prevLabel": "Previous"
+}
