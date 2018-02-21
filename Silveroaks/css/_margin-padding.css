@@ -1,0 +1,151 @@
+﻿/*Margin and Padding Helpers*/
+.margin-reset {
+  margin: 0px; }
+
+.pad-reset {
+  padding: 0px; }
+
+.margin-bot5 {
+  margin-bottom: 5px; }
+
+.margin-bot10 {
+  margin-bottom: 10px; }
+
+.margin-bot15 {
+  margin-bottom: 15px; }
+
+.margin-bot30 {
+  margin-bottom: 30px; }
+
+.margin-bot20 {
+  margin-bottom: 20px; }
+
+.margin-bot40 {
+  margin-bottom: 40px; }
+
+.margin-top5 {
+  margin-top: 5px; }
+
+.margin-top10 {
+  margin-top: 10px; }
+
+.margin-top15 {
+  margin-top: 15px; }
+
+.margin-top20 {
+  margin-top: 20px; }
+
+.margin-top30 {
+  margin-top: 30px; }
+
+.margin-top40 {
+  margin-top: 4rem; }
+
+.margin-left5 {
+  margin-left: 5px; }
+
+.margin-left10 {
+  margin-left: 10px; }
+
+.margin-left15 {
+  margin-left: 15px; }
+
+.margin-left20 {
+  margin-left: 20px; }
+
+.margin-left30 {
+  margin-left: 30px; }
+
+.margin-left40 {
+  margin-left: 40px; }
+
+.margin-right5 {
+  margin-right: 5px; }
+
+.margin-right10 {
+  margin-right: 10px; }
+
+.margin-right15 {
+  margin-right: 15px; }
+
+.margin-right20 {
+  margin-right: 20px; }
+
+.margin-right30 {
+  margin-right: 30px; }
+
+.margin-right40 {
+  margin-right: 40px; }
+
+.pad-bot5 {
+  padding-bottom: 5px; }
+
+.pad-bot10 {
+  padding-bottom: 10px; }
+
+.pad-bot15 {
+  padding-bottom: 15px; }
+
+.pad-bot20 {
+  padding-bottom: 20px; }
+
+.pad-bot30 {
+  padding-bottom: 30px; }
+
+.pad-bot40 {
+  padding-bottom: 40px; }
+
+.pad-top5 {
+  padding-top: 5px; }
+
+.pad-top10 {
+  padding-top: 10px; }
+
+.pad-top15 {
+  padding-top: 15px; }
+
+.pad-top20 {
+  padding-top: 20px; }
+
+.pad-top30 {
+  padding-top: 30px; }
+
+.pad-top40 {
+  padding-top: 40px; }
+
+.pad-left5 {
+  padding-left: 5px; }
+
+.pad-left10 {
+  padding-left: 10px; }
+
+.pad-left15 {
+  padding-left: 15px; }
+
+.pad-left20 {
+  padding-left: 20px; }
+
+.pad-left30 {
+  padding-left: 30px; }
+
+.pad-left40 {
+  padding-left: 40px; }
+
+.pad-right5 {
+  padding-right: 5px; }
+
+.pad-right10 {
+  padding-right: 10px; }
+
+.pad-right15 {
+  padding-right: 15px; }
+
+.pad-right20 {
+  padding-right: 20px; }
+
+.pad-right30 {
+  padding-right: 30px; }
+
+.pad-right40 {
+  padding-right: 40px; }
+

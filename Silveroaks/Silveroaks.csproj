@@ -311,6 +311,16 @@
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="css\creative.css" />
+    <Content Include="css\creative.min.css">
+      <DependentUpon>creative.css</DependentUpon>
+    </Content>
+    <Content Include="css\_margin-padding.css">
+      <DependentUpon>_margin-padding.scss</DependentUpon>
+    </Content>
+    <Content Include="css\_margin-padding.min.css">
+      <DependentUpon>_margin-padding.css</DependentUpon>
+    </Content>
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\trees.config" />
@@ -332,8 +342,17 @@
     <Content Include="config\404handlers.config" />
     <Content Include="App_Data\Models\all.dll.path" />
     <Content Include="App_Data\Models\models.hash" />
+    <Content Include="css\_margin-padding.scss" />
+    <None Include="bundleconfig.json" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="packages.config" />
-    <Content Include="scripts\creative.min.js" />
+    <Content Include="scripts\creative.js" />
+    <Content Include="scripts\creative.min.js">
+      <DependentUpon>creative.js</DependentUpon>
+    </Content>
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css">
       <DependentUpon>bootstrap-grid.css</DependentUpon>
@@ -362,6 +381,11 @@
     <Content Include="vendor\jquery\jquery.min.js" />
     <Content Include="vendor\jquery\jquery.slim.js" />
     <Content Include="vendor\jquery\jquery.slim.min.js" />
+    <None Include="vendor\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="vendor\jquery\jquery.validate.js" />
+    <Content Include="vendor\jquery\jquery.validate.min.js" />
+    <Content Include="vendor\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="vendor\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="vendor\magnific-popup\jquery.magnific-popup.js" />
     <Content Include="vendor\magnific-popup\jquery.magnific-popup.min.js" />
     <Content Include="vendor\magnific-popup\magnific-popup.css" />
@@ -426,6 +450,8 @@
     <Content Include="Views\Partials\Forms\Themes\default\Render.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\Script.cshtml" />
     <Content Include="Views\Partials\Forms\Themes\default\Submitted.cshtml" />
+    <Content Include="Views\MacroPartials\InsertUmbracoFormWithTheme.cshtml" />
+    <Content Include="Views\MacroPartials\RenderUmbracoFormScripts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -456,7 +482,6 @@
     <Content Include="config\Lang\ru-RU.user.xml" />
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
-    <Content Include="css\creative.min.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\header.jpg" />
@@ -480,9 +505,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\MacroPartials\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
