@@ -64,7 +64,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Meta Description: The meta description is what appears together with your site's name on a google search. It appears below the site name, recommended length is 130 words
+		/// Meta Description: The meta description is what appears together with your site's name on a google search, it appears below the site name. The recommended length is 130 words
 		///</summary>
 		[ImplementPropertyType("metaDescription")]
 		public string MetaDescription
@@ -73,7 +73,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Meta tags: Comma separated list that describes what your site is about. Modern browsers ignore this so it is not required. Could still do some good when included though
+		/// Meta tags: Comma separated list that describes what your site is about. Modern browsers ignore this so it is not required. Not harmful to add though
 		///</summary>
 		[ImplementPropertyType("metaTags")]
 		public string MetaTags
@@ -82,7 +82,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Page Title: The Page title is what you see in the browser's tab when you are on a page
+		/// Page Title: The Page title is what you see in the browser's tab
 		///</summary>
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle
