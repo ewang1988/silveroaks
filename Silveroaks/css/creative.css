@@ -24,7 +24,7 @@ hr
 
 a
 {
-    color: #F05F40;
+    color: rgb(126, 120, 118);
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
@@ -32,7 +32,7 @@ a
 
     a:hover
     {
-        color: #f05f40;
+        color: rgb(54, 48, 48);
     }
 
 h1,
@@ -43,6 +43,7 @@ h5,
 h6
 {
     font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: rgb(54, 48, 48);
 }
 
 .bg-primary
@@ -388,22 +389,48 @@ header.masthead
 {
     background-color: rgba(81, 122, 90,0.6);
     border-color: transparent;
+    border-color: rgb(54, 48, 48);
+    border-width: 1px;
+    border-style: solid;
 }
 
     .btn-primary:hover, .btn-primary:focus, .btn-primary:active
     {
         color: #fff;
         background-color: rgba(81, 122, 90,1);
+        border-color: transparent;
     }
 
 .btn-light
 {
     color: rgb(54, 48, 48);
     background-color: rgba(248, 249, 250, 0.6);
+    border-color: rgb(54, 48, 48);
+    border-width: 1px;
+    border-style: solid;
 }
 
     .btn-light:hover, .btn-light:focus, .btn-light:active
     {
         color: rgb(0, 0, 0);
         background-color: rgba(248, 249, 250, 1);
+        border-color: transparent;
     }
+
+.breadcrumb
+{
+    background-color: transparent;
+    padding: .75rem 0rem;
+}
+
+ul
+{
+    padding-left: 0px;
+    list-style: none;
+}
+
+a > img:hover
+{
+    opacity: 0.6;
+    transition: all 0.2s;
+}

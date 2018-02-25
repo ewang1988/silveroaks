@@ -2,28 +2,27 @@
 
 @{
     Layout = "Master.cshtml";
-    var room = Model.Content;
+    var umbracoModel = Model.Content;
 }
 
-<main class="container room-type">
-
-    <section class="row">
+<section class="container room-type">
+    <div class="row">
         @{
             Html.RenderPartial("BreadCrumbs", Model);
         }
         <div id="myCarousel" class="carousel slide col-md-8" data-ride="carousel">
             <div class="carousel-inner">
-                @for (int i = 0; i < room.RoomPictures.Count(); i++)
+                @for (int i = 0; i < umbracoModel.RoomPictures.Count(); i++)
                 {
                     if (i == 0)
                     {
                         <div class="carousel-item active">
-                            <img class="img-fluid" src="@room.RoomPictures.ElementAt(i).Url" alt="Slide @(i + 1)">
+                            <img class="img-fluid" src="@umbracoModel.RoomPictures.ElementAt(i).Url" alt="Slide @(i + 1)">
                         </div>
                         continue;
                     }
                     <div class="carousel-item">
-                        <img class="img-fluid" src="@room.RoomPictures.ElementAt(i).Url" alt="Slide @(i + 1)">
+                        <img class="img-fluid" src="@umbracoModel.RoomPictures.ElementAt(i).Url" alt="Slide @(i + 1)">
                     </div>
                 }
             </div>
@@ -37,28 +36,39 @@
             </a>
         </div>
         <div class="col-md-4">
-            <h1 class="my-3">@room.Name</h1>
+            <h1 class="my-3">@umbracoModel.Name</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-            <h3 class="my-3">Project Details</h3>
+            <h3 class="my-3">Room Features</h3>
             <ul>
-                @foreach (var feature in room.Children)
+                @foreach (var feature in umbracoModel.RoomFeatures)
                 {
-                    <li>@feature.Name</li>
+                    <li>@feature</li>
                 }
             </ul>
             <a href="#" class="btn btn-lg btn-primary">Book Now</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <h3 class="my-4">Other Rooms</h3>
-    <section class="row">
-        @foreach (RoomType item in room.Ancestor<Accommodation>().Children)
-        {
-            <div class="col-md-4 col-sm-6 mb-4">
-                <a href="@item.Url">
-                    <img class="img-fluid" src="@item.ThumbnailPic.Url" alt="@item.Name">
-                </a>
-            </div>
-        }
-    </section>
-</main>
+
+<section class="bg-primary">
+    <div class="container">
+        <h3 class="my-4 text-white">Other Rooms</h3>
+        <div class="row">
+            @foreach (RoomType room in umbracoModel.Ancestor<Accommodation>().Children
+                .Where(x => !x.Id.Equals(umbracoModel.Id)))
+            {
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <h4 class="card-header">@room.Name</h4>
+                        <div>
+                            <a href="@room.Url">
+                                <img src="@room.ThumbnailPic.Url" class="img-fluid" alt="@room.Name" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

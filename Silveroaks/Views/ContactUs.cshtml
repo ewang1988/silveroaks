@@ -1,18 +1,17 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContactUs>
 @{
     Layout = "Master.cshtml";
+    var umbracoModel = Model.Content;
 }
 
 <main id="contact-us" class="container">
-    <!-- Page Heading/Breadcrumbs -->
     <h1 class="mb-3 margin-top40">
-        Contact Us
+        @umbracoModel.HeaderText
     </h1>
-    @{
-        Html.RenderPartial("BreadCrumbs");
-    }
-    <!-- Content Row -->
     <div class="row">
+        @{
+            Html.RenderPartial("BreadCrumbs", Model);
+        }
         <!-- Map Column -->
         <div class="col-lg-8 mb-4">
             <!-- Embedded Google Map -->
@@ -20,24 +19,21 @@
         </div>
         <!-- Contact Details Column -->
         <div class="col-lg-4 mb-4">
-            <h3>Contact Details</h3>
+            <h3>@umbracoModel.DetailsHeader</h3>
             <p>
-                3481 Melrose Place
-                <br>Beverly Hills, CA 90210
-                <br>
+                @foreach (var item in umbracoModel.DetailsAddress)
+                {
+                    <br />@item
+                }
             </p>
             <p>
-                <abbr title="Phone">P</abbr>: (123) 456-7890
+                <i class="fas fa-phone fa-1x"></i>
+                <a href="tel:@umbracoModel.DetailsPhoneNumber" class="pad-left10">@umbracoModel.DetailsPhoneNumber</a>
             </p>
             <p>
-                <abbr title="Email">E</abbr>:
-                <a href="mailto:name@example.com">
-                    name@example.com
-                </a>
-            </p>
+                <i class="fas fa-envelope-open fa-1x"></i>
+                <a href="mailto:@umbracoModel.DetailsEmail" class="pad-left10">@umbracoModel.DetailsEmail</a>
             <p>
-                <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
-            </p>
         </div>
     </div>
     <!-- /.row -->

@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Room Type</summary>
 	[PublishedContentModel("roomType")]
-	public partial class RoomType : PublishedContentModel, INavigation, IPageHeaderText
+	public partial class RoomType : PublishedContentModel, INavigation
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "roomType";
@@ -46,7 +46,16 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Room Pictures: Pick gallery pictures here
+		/// Room Features: list of features for this room
+		///</summary>
+		[ImplementPropertyType("roomFeatures")]
+		public IEnumerable<string> RoomFeatures
+		{
+			get { return this.GetPropertyValue<IEnumerable<string>>("roomFeatures"); }
+		}
+
+		///<summary>
+		/// Room Pictures: Pick 1 or more gallery pictures here
 		///</summary>
 		[ImplementPropertyType("roomPictures")]
 		public IEnumerable<IPublishedContent> RoomPictures
@@ -97,24 +106,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool PageVisible
 		{
 			get { return Umbraco.Web.PublishedContentModels.Navigation.GetPageVisible(this); }
-		}
-
-		///<summary>
-		/// Header Text: Your page header
-		///</summary>
-		[ImplementPropertyType("headerText")]
-		public string HeaderText
-		{
-			get { return Umbraco.Web.PublishedContentModels.PageHeaderText.GetHeaderText(this); }
-		}
-
-		///<summary>
-		/// Short Description: Short description of the element goes here
-		///</summary>
-		[ImplementPropertyType("shortDescription")]
-		public string ShortDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.PageHeaderText.GetShortDescription(this); }
 		}
 	}
 }

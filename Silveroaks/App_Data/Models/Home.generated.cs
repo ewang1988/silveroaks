@@ -55,7 +55,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// aboutUsDescription: Write about page here
+		/// Description: A quick description about us
 		///</summary>
 		[ImplementPropertyType("aboutUsDescription")]
 		public string AboutUsDescription
@@ -208,7 +208,7 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Home Page Featured Rooms: Pick featured rooms for the homepage here
+		/// Home Page Featured Rooms: Pick featured rooms on the homepage here
 		///</summary>
 		[ImplementPropertyType("homePageFeaturedRooms")]
 		public IEnumerable<IPublishedContent> HomePageFeaturedRooms

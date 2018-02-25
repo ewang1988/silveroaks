@@ -46,6 +46,42 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Address: Street Town City Country
+		///</summary>
+		[ImplementPropertyType("detailsAddress")]
+		public IEnumerable<string> DetailsAddress
+		{
+			get { return this.GetPropertyValue<IEnumerable<string>>("detailsAddress"); }
+		}
+
+		///<summary>
+		/// Email
+		///</summary>
+		[ImplementPropertyType("detailsEmail")]
+		public string DetailsEmail
+		{
+			get { return this.GetPropertyValue<string>("detailsEmail"); }
+		}
+
+		///<summary>
+		/// Header: Header text for contact details
+		///</summary>
+		[ImplementPropertyType("detailsHeader")]
+		public string DetailsHeader
+		{
+			get { return this.GetPropertyValue<string>("detailsHeader"); }
+		}
+
+		///<summary>
+		/// Phone Number: country code - area code - 123 - 123 - 123
+		///</summary>
+		[ImplementPropertyType("detailsPhoneNumber")]
+		public string DetailsPhoneNumber
+		{
+			get { return this.GetPropertyValue<string>("detailsPhoneNumber"); }
+		}
+
+		///<summary>
 		/// Meta Description: The meta description is what appears together with your site's name on a google search, it appears below the site name. The recommended length is 130 words
 		///</summary>
 		[ImplementPropertyType("metaDescription")]
