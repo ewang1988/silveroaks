@@ -321,7 +321,6 @@
     <Content Include="css\_margin-padding.min.css">
       <DependentUpon>_margin-padding.css</DependentUpon>
     </Content>
-    <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\trees.config" />
     <Content Include="config\tinyMceConfig.config" />
