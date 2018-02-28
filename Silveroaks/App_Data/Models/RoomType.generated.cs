@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Short Description
+		///</summary>
+		[ImplementPropertyType("featureShortDescription")]
+		public string FeatureShortDescription
+		{
+			get { return this.GetPropertyValue<string>("featureShortDescription"); }
+		}
+
+		///<summary>
 		/// Room Features: list of features for this room
 		///</summary>
 		[ImplementPropertyType("roomFeatures")]

@@ -26,13 +26,16 @@
                     <br />@item
                 }
             </p>
+            <ul>
+                @foreach (var number in umbracoModel.DetailsPhoneNumber)
+                {
+                    <li>
+                        <a href="tel:@number">@number</a>
+                    </li>
+                }
+            </ul>
             <p>
-                <i class="fas fa-phone fa-1x"></i>
-                <a href="tel:@umbracoModel.DetailsPhoneNumber" class="pad-left10">@umbracoModel.DetailsPhoneNumber</a>
-            </p>
-            <p>
-                <i class="fas fa-envelope-open fa-1x"></i>
-                <a href="mailto:@umbracoModel.DetailsEmail" class="pad-left10">@umbracoModel.DetailsEmail</a>
+                <a href="mailto:@umbracoModel.DetailsEmail">@umbracoModel.DetailsEmail</a>
             <p>
         </div>
     </div>

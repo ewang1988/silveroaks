@@ -76,9 +76,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// Phone Number: country code - area code - 123 - 123 - 123
 		///</summary>
 		[ImplementPropertyType("detailsPhoneNumber")]
-		public string DetailsPhoneNumber
+		public IEnumerable<string> DetailsPhoneNumber
 		{
-			get { return this.GetPropertyValue<string>("detailsPhoneNumber"); }
+			get { return this.GetPropertyValue<IEnumerable<string>>("detailsPhoneNumber"); }
 		}
 
 		///<summary>
